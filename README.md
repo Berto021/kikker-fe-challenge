@@ -4,7 +4,7 @@ Este projeto front-end utiliza a biblioteca React juntamente com a biblioteca An
 
 Desafio: Implementar uma tabela completa de pedidos com o Ant Design e API externa.
 
-O objetivo deste desafio é construir uma tabela robusta e interativa para visualizar dados de pedidos, utilizando a biblioteca Ant Design e consumindo dados de uma API externa. A tabela deve apresentar as seguintes características:
+O objetivo deste desafio é construir uma tabela robusta e interativa para visualizar dados de pedidos, utilizando a biblioteca Ant Design e consumindo dados de uma API externa (https://kikker-api-fe-challenge.vercel.app/api/getdata). A tabela deve apresentar as seguintes características:
 
 # Funcionalidades:
 
