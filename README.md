@@ -51,6 +51,8 @@ Estado e gerenciamento de dados: Implementar o gerenciamento de estado para cont
 
 Estilização: Personalizar a aparência da tabela com estilos adequados, utilizando recursos de design do Ant Design.
 
+Fazer o Deploy na Vercel para que o site seja funcional e verificável através do prisma do usuário.
+
 # Considerações:
 
 Desempenho: Otimizar o desempenho da tabela para garantir uma experiência fluida ao usuário, mesmo com grandes conjuntos de dados.
