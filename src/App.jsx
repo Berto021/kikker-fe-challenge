@@ -1,18 +1,12 @@
 import "./App.css";
-import SearchInput from "./Components/SearchInput/SearchInput";
-import Logo from "./Components/Logo/Logo";
+
+import DataTable from "./Components/DataTable/DataTable";
 
 function App() {
   return (
     <div>
-      <div className="input-container">
-      <Logo />
-      <SearchInput />
-    </div>
-    <div className="list-container">
-      
-
-    </div>
+     
+    <DataTable/>
     </div>
   );
 }
