@@ -1,17 +1,20 @@
-import { useState } from 'react'
-
-import './App.css'
-import SearchInput from './Components/SearchInput'
-import Logo from './Components/Logo'
+import "./App.css";
+import SearchInput from "./Components/SearchInput/SearchInput";
+import Logo from "./Components/Logo/Logo";
 
 function App() {
-
   return (
-    <div className='input-container'>
+    <div>
+      <div className="input-container">
       <Logo />
       <SearchInput />
     </div>
-  )
+    <div className="list-container">
+      
+
+    </div>
+    </div>
+  );
 }
 
-export default App
+export default App;
