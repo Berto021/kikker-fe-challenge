@@ -3,7 +3,7 @@ import { Button, Table, Input, Flex } from "antd";
 import React from "react";
 import { states } from "./states";
 import { SearchOutlined } from "@ant-design/icons";
-import "./DataTable.css"
+import "./DataTable.css";
 
 function DataTable() {
   const [bottom, setBottom] = useState("bottomCenter");
@@ -27,11 +27,6 @@ function DataTable() {
     {
       title: "City",
       dataIndex: "city",
-      filteredValue: [searchText],
-      onFilter: (value, record) => {
-        return String(record.city).toLowerCase().includes(value.toLowerCase());
-      },
-
       filterDropdown: ({
         setSelectedKeys,
         selectedKeys,
@@ -39,7 +34,7 @@ function DataTable() {
         clearFilters,
       }) => {
         return (
-          <>
+          <div>
             <Input
               autoFocus
               placeholder="Type text here"
@@ -71,7 +66,7 @@ function DataTable() {
             >
               Reset
             </Button>
-          </>
+          </div>
         );
       },
       filterIcon: () => {
@@ -81,10 +76,10 @@ function DataTable() {
         return record.city.toLowerCase().includes(value.toLowerCase());
       },
     },
+
     {
       title: "ClientName ",
       dataIndex: "clientName",
-      filteredValue: [searchText],
 
       filterDropdown: ({
         setSelectedKeys,
@@ -306,57 +301,10 @@ function DataTable() {
     {
       title: "OrderID",
       dataIndex: "orderId",
-      filterDropdown: ({
-        setSelectedKeys,
-        selectedKeys,
-        confirm,
-        clearFilters,
-      }) => {
-        return (
-          <>
-            <Input
-              autoFocus
-              placeholder="Type text here"
-              value={selectedKeys[0]}
-              onChange={(e) => {
-                setSelectedKeys(e.target.value ? [e.target.value] : []);
-                confirm({ closeDropdown: false });
-              }}
-              onPressEnter={() => {
-                confirm();
-              }}
-              onBlur={() => {
-                confirm();
-              }}
-            ></Input>
-            <Button
-              onClick={() => {
-                confirm();
-              }}
-              type="primary"
-            >
-              Search
-            </Button>
-            <Button
-              onClick={() => {
-                clearFilters();
-              }}
-              danger
-            >
-              Reset
-            </Button>
-          </>
-        );
-      },
-      filterIcon: () => {
-        return <SearchOutlined />;
-      },
-      onFilter: (value, record) => {
-        return record.orderId.toLowerCase().includes(value.toLowerCase());
-      },
+      sorter: (a, b) => a.orderId - b.orderId,
     },
     {
-      title: "OrderNum",
+      title: "OrderNumber",
       dataIndex: "orderNumber",
       sorter: (a, b) => a.orderNumber - b.orderNumber,
     },
@@ -575,91 +523,12 @@ function DataTable() {
     {
       title: "ZipCode",
       dataIndex: "zipCode",
-      filterDropdown: ({
-        setSelectedKeys,
-        selectedKeys,
-        confirm,
-        clearFilters,
-      }) => {
-        return (
-          <>
-            <Input
-              autoFocus
-              placeholder="Type text here"
-              value={selectedKeys[0]}
-              onChange={(e) => {
-                setSelectedKeys(e.target.value ? [e.target.value] : []);
-                confirm({ closeDropdown: false });
-              }}
-              onPressEnter={() => {
-                confirm();
-              }}
-              onBlur={() => {
-                confirm();
-              }}
-            ></Input>
-            <Button
-              onClick={() => {
-                confirm();
-              }}
-              type="primary"
-            >
-              Search
-            </Button>
-            <Button
-              onClick={() => {
-                clearFilters();
-              }}
-              danger
-            >
-              Reset
-            </Button>
-          </>
-        );
-      },
-      filterIcon: () => {
-        return <SearchOutlined />;
-      },
-      onFilter: (value, record) => {
-        return record.zipcode.toLowerCase().includes(value.toLowerCase());
-      },
+      sorter: (a, b) => a.zipCode - b.zipCode,
     },
   ];
 
   return (
     <div>
-      <div>
-        <Input.Search
-          onSearch={(value) => {
-            setSearchText(value);
-          }}
-          onChange={(e) => {
-            setSearchText(e.target.value);
-          }}
-          placeholder="Cidades"
-          className="input"
-        />
-        <Input.Search
-          onSearch={(value) => {
-            setSearchText(value);
-          }}
-          onChange={(e) => {
-            setSearchText(e.target.value);
-          }}
-          placeholder="Produtos"
-          className="input"
-        />
-        <Input.Search
-          onSearch={(value) => {
-            setSearchText(value);
-          }}
-          onChange={(e) => {
-            setSearchText(e.target.value);
-          }}
-          placeholder="Status"
-          className="input"
-        />
-      </div>
       <Table
         className="table"
         size="large"
@@ -669,7 +538,7 @@ function DataTable() {
           position: [bottom],
           style: { backgroundColor: "white" },
         }}
-        scroll={{ x: 1000 }}
+        scroll={{ x: 3300, y: 500 }}
       ></Table>
     </div>
   );
