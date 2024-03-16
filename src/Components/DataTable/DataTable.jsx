@@ -1,20 +1,37 @@
 import { useEffect, useState } from "react";
-import { Button, Table } from "antd";
+import { Button, Table, Input, Flex } from "antd";
 import React from "react";
 import { states } from "./states";
-import Input from "antd/es/input/Input";
 import { SearchOutlined } from "@ant-design/icons";
+import "./DataTable.css"
 
 function DataTable() {
   const [bottom, setBottom] = useState("bottomCenter");
   const [dataSource, setDataSource] = useState([]);
+  const [searchText, setSearchText] = useState("");
+  const fetchRecords = () => {
+    fetch("https://kikker-api-fe-challenge.vercel.app/api/getdata").then(
+      (res) => {
+        res.json().then((response) => {
+          setDataSource(response);
+        });
+      }
+    );
+  };
+
   useEffect(() => {
     fetchRecords();
   }, []);
+
   const columns = [
     {
       title: "City",
       dataIndex: "city",
+      filteredValue: [searchText],
+      onFilter: (value, record) => {
+        return String(record.city).toLowerCase().includes(value.toLowerCase());
+      },
+
       filterDropdown: ({
         setSelectedKeys,
         selectedKeys,
@@ -67,6 +84,8 @@ function DataTable() {
     {
       title: "ClientName ",
       dataIndex: "clientName",
+      filteredValue: [searchText],
+
       filterDropdown: ({
         setSelectedKeys,
         selectedKeys,
@@ -117,7 +136,7 @@ function DataTable() {
       },
     },
     {
-      title: "DeliveryAddress",
+      title: "DeliveryAddress.",
       dataIndex: "deliveryAddress",
       filterDropdown: ({
         setSelectedKeys,
@@ -337,7 +356,7 @@ function DataTable() {
       },
     },
     {
-      title: "OrderNumber",
+      title: "OrderNum",
       dataIndex: "orderNumber",
       sorter: (a, b) => a.orderNumber - b.orderNumber,
     },
@@ -606,26 +625,51 @@ function DataTable() {
       },
     },
   ];
-  const fetchRecords = () => {
-    fetch("https://kikker-api-fe-challenge.vercel.app/api/getdata").then(
-      (res) => {
-        res.json().then((response) => {
-          setDataSource(response);
-        });
-      }
-    );
-  };
 
   return (
-    <div style={{ backgroundColor: "#158285" }}>
+    <div>
+      <div>
+        <Input.Search
+          onSearch={(value) => {
+            setSearchText(value);
+          }}
+          onChange={(e) => {
+            setSearchText(e.target.value);
+          }}
+          placeholder="Cidades"
+          className="input"
+        />
+        <Input.Search
+          onSearch={(value) => {
+            setSearchText(value);
+          }}
+          onChange={(e) => {
+            setSearchText(e.target.value);
+          }}
+          placeholder="Produtos"
+          className="input"
+        />
+        <Input.Search
+          onSearch={(value) => {
+            setSearchText(value);
+          }}
+          onChange={(e) => {
+            setSearchText(e.target.value);
+          }}
+          placeholder="Status"
+          className="input"
+        />
+      </div>
       <Table
+        className="table"
         size="large"
         columns={columns}
         dataSource={dataSource}
         pagination={{
           position: [bottom],
+          style: { backgroundColor: "white" },
         }}
-        scr
+        scroll={{ x: 1000 }}
       ></Table>
     </div>
   );
