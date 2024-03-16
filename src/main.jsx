@@ -14,7 +14,6 @@ ReactDOM.createRoot(document.getElementById("root")).render(
       components: {
         Table: {
           headerBg: "#158285",
-          headerBorderRadius: 30,
           headerSplitColor: "black",
         },
         Pagination: {
