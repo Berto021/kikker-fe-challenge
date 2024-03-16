@@ -1,6 +1,5 @@
-# Documentação do Projeto Front-end
+# Desafio Técnico Kikker- Desenvolvedor Front-end
 
-Este projeto front-end utiliza a biblioteca React juntamente com a biblioteca Ant Design (antd) para gerar os componentes visuais.
 
 Desafio: Implementar uma tabela completa de pedidos com o Ant Design e API externa.
 
@@ -16,7 +15,7 @@ Filtragem: Facilitar a busca por pedidos específicos, fornecendo opções para 
 
 Ordenação: Permitir que o usuário ordene os dados por qualquer coluna, de forma ascendente ou descendente, facilitando a análise e comparação de informações.
 
-Seleção de linhas: Possibilitar a seleção de uma ou mais linhas da tabela para realizar ações subsequentes, como visualizar detalhes do pedido, editar informações ou realizar outras operações.
+
 
 # Colunas da tabela:
 * ID do Pedido
@@ -40,23 +39,16 @@ Seleção de linhas: Possibilitar a seleção de uma ou mais linhas da tabela pa
 * Valor Unitário
 * Total do Item
 
-# Requisitos técnicos:
 
-Biblioteca: Utilizar a biblioteca Ant Design para construir a tabela, aproveitando seus recursos de layout, personalização e interatividade.
 
-API externa: Consumir dados de uma API externa através de requisições HTTP, utilizando métodos como GET e POST.
-Formato dos dados: Os dados da API devem ser formatados em JSON para facilitar o processamento e a exibição na tabela.
+# Realizações:
 
-Estado e gerenciamento de dados: Implementar o gerenciamento de estado para controlar a paginação, filtragem, ordenação e seleção de linhas da tabela.
+Desempenho: Implementação de uma tabela com uma grande quantidade de dados, mas mesmo assim continua sendo fluida .
 
-Estilização: Personalizar a aparência da tabela com estilos adequados, utilizando recursos de design do Ant Design.
+Funcionalidades: Filtragem específica para cada um dos 20 tipos de dados diferentes, possibilitando uma análise solida e profunda dos dados recebidos.
 
-Fazer o Deploy na Vercel para que o site seja funcional e verificável através do prisma do usuário.
+Paginação: Paginação com opção de moldar a quantidade de dados que vão ser mostrados, podendo mostrar até 100 linhas diferentes ao mesmo tempo.
 
-# Considerações:
 
-Desempenho: Otimizar o desempenho da tabela para garantir uma experiência fluida ao usuário, mesmo com grandes conjuntos de dados.
 
-Acessibilidade: Implementar recursos de acessibilidade para garantir que a tabela seja acessível a todos os usuários, incluindo aqueles com deficiência visual ou motora.
 
-Testes: Realizar testes unitários e de integração para garantir o bom funcionamento da tabela e detectar possíveis falhas.

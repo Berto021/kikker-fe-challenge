@@ -6,9 +6,8 @@ import MainPage from "./Components/MainPage/MainPage";
 function App() {
   return (
     <div className="principalContainer">
-     <MainPage /> 
-     
-    <DataTable/>
+      <MainPage />
+      <DataTable />
     </div>
   );
 }
