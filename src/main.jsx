@@ -10,7 +10,6 @@ ReactDOM.createRoot(document.getElementById("root")).render(
     theme={{
       token: {
         colorPrimary: "#3b5998",
-        
       },
       components: {
         Table: {
@@ -21,7 +20,6 @@ ReactDOM.createRoot(document.getElementById("root")).render(
         Pagination: {
           position: "center",
         },
-        
       },
     }}
   >

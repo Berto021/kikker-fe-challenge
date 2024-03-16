@@ -3,6 +3,7 @@ import { Button, Table, Input, Flex } from "antd";
 import React from "react";
 import { states } from "./states";
 import { SearchOutlined } from "@ant-design/icons";
+import "./DataTable.css"
 
 function DataTable() {
   const [bottom, setBottom] = useState("bottomCenter");
@@ -626,8 +627,8 @@ function DataTable() {
   ];
 
   return (
-    <div style={{ maxHeight: 500 }}>
-      <div style={{}}>
+    <div>
+      <div>
         <Input.Search
           onSearch={(value) => {
             setSearchText(value);
@@ -636,7 +637,7 @@ function DataTable() {
             setSearchText(e.target.value);
           }}
           placeholder="Cidades"
-          style={{ width: 300, marginBottom: 30, marginLeft: 100 }}
+          className="input"
         />
         <Input.Search
           onSearch={(value) => {
@@ -646,7 +647,7 @@ function DataTable() {
             setSearchText(e.target.value);
           }}
           placeholder="Produtos"
-          style={{ width: 300, marginBottom: 30, marginLeft: 100 }}
+          className="input"
         />
         <Input.Search
           onSearch={(value) => {
@@ -656,11 +657,11 @@ function DataTable() {
             setSearchText(e.target.value);
           }}
           placeholder="Status"
-          style={{ width: 300, marginBottom: 30, marginLeft: 100 }}
+          className="input"
         />
       </div>
       <Table
-        style={{ height: 400, width: 2000 }}
+        className="table"
         size="large"
         columns={columns}
         dataSource={dataSource}
